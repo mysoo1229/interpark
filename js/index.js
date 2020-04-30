@@ -38,7 +38,7 @@ $(function(){
 	//Ticket Open
 	setInterval(ticketOpenAuto,3000);
 	function ticketOpenAuto(){
-		$('.ticketOpen>div>ul').animate({top:'-38px'},500,function(){
+		$('.ticketOpen>div>ul').stop().animate({top:'-38px'},500,function(){
 			$('.ticketOpen>div>ul').append($('.ticketOpen>div>ul>li').eq(0));
 			$('.ticketOpen>div>ul').append($('.ticketOpen>div>ul>li').eq(0));
 			$('.ticketOpen>div>ul').css('top','0');
@@ -175,7 +175,7 @@ $(function(){
 		if($(window).scrollTop()<730){
 			$('#sideLeft').css('top','730px');
 		}else{
-			$('#sideLeft').animate({top:$(window).scrollTop()},100);
+			$('#sideLeft').stop().animate({top:$(window).scrollTop()},100);
 		}
 	});
 
@@ -186,7 +186,7 @@ $(function(){
 	});
 	$('#sideRight>.big>.close').click(function(){
 		$('#sideRight>.big>.close').hide();
-		$('#sideRight>.big').animate({width:'200px',right:'100px',opacity:0},function(){
+		$('#sideRight>.big').stop().animate({width:'200px',right:'100px',opacity:0},function(){
 			$('#sideRight>.big').hide().css({width:'750px',right:'650px',opacity:1});
 			$('#sideRight>.big>.close').show();
 			$('#sideRight>.small').show();
